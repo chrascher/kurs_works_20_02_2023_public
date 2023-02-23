@@ -13,9 +13,9 @@ public class ChatMessageDTO {
 
     private Long id;
 
+    @NotBlank(message="ChatRoom may not be blank")
     private String userName;
 
-    @NotBlank(message="ChatRoom may not be blank")
     private String chatRoom;
 
     private String chatMessage;

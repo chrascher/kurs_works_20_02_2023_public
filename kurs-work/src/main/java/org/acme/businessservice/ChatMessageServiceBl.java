@@ -9,7 +9,9 @@ import org.jboss.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
+import java.util.HashSet;
 import java.util.Set;
 
 @ApplicationScoped
@@ -28,9 +30,6 @@ public class ChatMessageServiceBl {
     @Logged
     public ChatMessageEntity create(ChatMessageEntity createCM ) {
 
-        createCM.setChatRoom("");
-
-
         Set<ConstraintViolation<ChatMessageEntity>> violations = validator.validate(createCM);
 
         if ( !violations.isEmpty()) {
@@ -39,8 +38,10 @@ public class ChatMessageServiceBl {
                 log.error(violation.getMessage());
                 error.append(violation.getMessage() + " : ");
             }
+            throw new ConstraintViolationException(
+                    new HashSet<ConstraintViolation<?>>(violations));
 
-            throw new MyBusinessException(error.toString());
+            // throw new MyBusinessException(error.toString());
         }
 
         return cmService.create(createCM);
