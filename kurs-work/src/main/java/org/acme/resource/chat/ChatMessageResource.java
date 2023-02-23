@@ -86,8 +86,9 @@ public class ChatMessageResource {
 
         ChatMessageEntity entity = translator.fromDTO(chatMessageDTO);
 
-        // ChatMessageEntity chatMessageEntity = cmServiceBl.create(entity);
-        ChatMessageEntity chatMessageEntity = cmService.create(entity);
+        // change between business service indirection and direct use of data repository
+        ChatMessageEntity chatMessageEntity = cmServiceBl.create(entity);
+        // ChatMessageEntity chatMessageEntity = cmService.create(entity);
 
         return translator.toDTO(chatMessageEntity);
     }

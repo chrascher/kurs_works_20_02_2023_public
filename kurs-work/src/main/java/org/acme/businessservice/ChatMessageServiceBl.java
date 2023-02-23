@@ -30,6 +30,11 @@ public class ChatMessageServiceBl {
     @Logged
     public ChatMessageEntity create(ChatMessageEntity createCM ) {
 
+        // 3 Bean Validierungs Varianten sind nun verfügbar:
+        //    1. AutomatischeValidierung des DTO via @Valid im Rest API
+        //    2. Manuelle Validierung durch Aufruf im ChatMessageServiceBl
+        //    3. Automatische Validierung des Entities bei der JPA/Hibernate Persistierung
+
         Set<ConstraintViolation<ChatMessageEntity>> violations = validator.validate(createCM);
 
         if ( !violations.isEmpty()) {
