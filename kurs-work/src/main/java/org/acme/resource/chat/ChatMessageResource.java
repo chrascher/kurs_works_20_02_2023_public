@@ -62,7 +62,7 @@ public class ChatMessageResource {
     }
     // z.b. http://localhost:8080/chatMessageResource/chatMessage/75
     @Operation( summary = "read a chat message",
-            description = "read message with id ")
+            description = "read message with id " )
     @GET
     @Path("/chatMessage/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -87,7 +87,9 @@ public class ChatMessageResource {
         ChatMessageEntity entity = translator.fromDTO(chatMessageDTO);
 
         // change between business service indirection and direct use of data repository
+
         ChatMessageEntity chatMessageEntity = cmServiceBl.create(entity);
+
         // ChatMessageEntity chatMessageEntity = cmService.create(entity);
 
         return translator.toDTO(chatMessageEntity);
