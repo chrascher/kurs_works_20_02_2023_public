@@ -81,7 +81,7 @@ public class ChatMessageResource {
     @POST
     @Path("/chatMessage")
     @Produces(MediaType.APPLICATION_JSON)
-    public ChatMessageDTO insertChatMessage(ChatMessageDTO chatMessageDTO) {
+    public ChatMessageDTO insertChatMessage(@Valid ChatMessageDTO chatMessageDTO) {
         LOG.info("insertChatMessage ");
 
         ChatMessageEntity entity = translator.fromDTO(chatMessageDTO);
@@ -95,7 +95,7 @@ public class ChatMessageResource {
     @PUT
     @Path("/chatMessage")
     @Produces(MediaType.APPLICATION_JSON)
-    public ChatMessageDTO updateChatMessage(ChatMessageDTO chatMessageDTO) {
+    public ChatMessageDTO updateChatMessage(@Valid ChatMessageDTO chatMessageDTO) {
         LOG.info("updateChatMessage ");
 
         if(chatMessageDTO.getId() == null ) {
