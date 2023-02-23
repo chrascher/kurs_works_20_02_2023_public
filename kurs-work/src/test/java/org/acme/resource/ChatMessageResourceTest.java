@@ -29,7 +29,6 @@ class ChatMessageResourceTest {
         ChatMessageDTO chatMessageDto = body.as(ChatMessageDTO.class);
         assertNotNull(chatMessageDto);
         System.out.println("chatMessageDto = " + chatMessageDto.toString());
-        //.body(is("Hello from RESTEasy Reactive"));
     }
 
     @Test
@@ -46,6 +45,7 @@ class ChatMessageResourceTest {
                 .header("Content-Type", "application/json");
 
         RequestSpecification requestSpecification = httpRequest.body(chatMessageDto);
+
         Response response = requestSpecification.post("/chatMessageResource/chatMessage");
 
         //Fetching the response code from the request and validating the same
