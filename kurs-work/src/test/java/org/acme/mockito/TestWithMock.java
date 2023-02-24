@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class TestWithMock {
 
     @InjectMock
-    ChatMessageServiceDb mockecCMService;
+    ChatMessageServiceDb chatMsgDbMock;
 
     @Inject
     ChatMessageServiceBl toTest;
@@ -47,9 +47,10 @@ public class TestWithMock {
     @Test
     public void firstTest() {
 
-        Mockito.when(mockecCMService.create(chatMessageInput)).thenReturn(chatMessage);
+        Mockito.when(chatMsgDbMock.create(chatMessageInput)).thenReturn(chatMessage);
 
-        ChatMessageEntity created = mockecCMService.create(chatMessageInput);
+        // call tested service but data access will be replaced with mocked one
+        ChatMessageEntity created = toTest.create(chatMessageInput);
 
         Assertions.assertEquals("mocktest", created.getChatMessage());
         Assertions.assertEquals(1000L, created.getId());
