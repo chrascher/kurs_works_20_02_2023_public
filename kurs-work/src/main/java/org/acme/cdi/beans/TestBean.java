@@ -1,4 +1,4 @@
-package org.acme.beans;
+package org.acme.cdi.beans;
 
 public interface TestBean {
 

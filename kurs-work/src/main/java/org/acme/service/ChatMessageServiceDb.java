@@ -1,12 +1,9 @@
 package org.acme.service;
 import io.quarkus.runtime.util.StringUtil;
 import org.acme.entity.ChatMessageEntity;
-import org.acme.entity.TestEntity;
-import org.acme.logintercept.Logged;
-import org.jboss.logging.Logger;
+import org.acme.cdi.logintercept.Logged;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.persistence.*;
 import javax.persistence.criteria.*;
 import javax.transaction.Transactional;

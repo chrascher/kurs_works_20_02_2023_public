@@ -1,13 +1,12 @@
 package org.acme.resource.cdi;
 
 
-import org.acme.beans.TestBean;
-import org.acme.beans2.PBInterface;
-import org.acme.beans3.QBean;
-import org.acme.beans3.qualify.QualifyA;
-import org.acme.beans3.qualify.QualifyB;
-import org.acme.logintercept.RSBeanInterceptedExample;
-import org.acme.requestscope.RSBean;
+import org.acme.cdi.beans.TestBean;
+import org.acme.cdi.beans2.PBInterface;
+import org.acme.cdi.beans3.QBean;
+import org.acme.cdi.beans3.qualify.QualifyB;
+import org.acme.cdi.logintercept.RSBeanInterceptedExample;
+import org.acme.cdi.requestscope.RSBean;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

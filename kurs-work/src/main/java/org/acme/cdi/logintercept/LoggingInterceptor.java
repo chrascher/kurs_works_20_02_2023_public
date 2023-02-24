@@ -1,4 +1,4 @@
-package org.acme.logintercept;
+package org.acme.cdi.logintercept;
 
 import org.jboss.logging.Logger;
 import javax.inject.Inject;

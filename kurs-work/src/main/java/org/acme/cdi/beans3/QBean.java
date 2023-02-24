@@ -1,4 +1,4 @@
-package org.acme.beans3;
+package org.acme.cdi.beans3;
 
 public interface QBean {
 

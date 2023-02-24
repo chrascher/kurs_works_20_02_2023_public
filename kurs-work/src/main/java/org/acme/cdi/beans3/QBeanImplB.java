@@ -1,22 +1,22 @@
-package org.acme.beans3;
+package org.acme.cdi.beans3;
 
-import org.acme.beans3.qualify.QualifyA;
+import org.acme.cdi.beans3.qualify.QualifyB;
 import org.jboss.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.io.Serializable;
 
-@QualifyA
+@QualifyB
 @ApplicationScoped
-public class QBeanImplA implements QBean, Serializable {
+public class QBeanImplB implements QBean, Serializable {
+
     @Inject
     Logger log;
 
     @Override
     public String echo(String input) {
-        log.info("QBeanImplA called");
-        return input;
+        log.info("QBeanImplB called");
+        return "dummy";
     }
-
 }

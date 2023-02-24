@@ -1,4 +1,4 @@
-package org.acme.beans2;
+package org.acme.cdi.beans2;
 
 public interface PBInterface {
 

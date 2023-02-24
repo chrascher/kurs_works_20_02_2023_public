@@ -1,4 +1,4 @@
-package org.acme.requestscope;
+package org.acme.cdi.requestscope;
 
 import org.jboss.logging.Logger;
 

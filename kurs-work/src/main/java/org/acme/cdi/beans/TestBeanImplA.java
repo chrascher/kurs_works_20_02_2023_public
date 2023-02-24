@@ -1,11 +1,9 @@
-package org.acme.beans;
+package org.acme.cdi.beans;
 
 import org.jboss.logging.Logger;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import java.io.Serializable;
 

@@ -1,10 +1,6 @@
-package org.acme.beans2;
+package org.acme.cdi.beans2;
 
 import org.jboss.logging.Logger;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.Dependent;
-import javax.inject.Inject;
 
 public class PBImplA implements PBInterface  {
 

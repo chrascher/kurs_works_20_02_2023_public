@@ -1,11 +1,6 @@
-package org.acme.logintercept;
+package org.acme.cdi.logintercept;
 
-import org.jboss.logging.Logger;
-
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import java.time.LocalDateTime;
 import java.util.Locale;
 
 @RequestScoped

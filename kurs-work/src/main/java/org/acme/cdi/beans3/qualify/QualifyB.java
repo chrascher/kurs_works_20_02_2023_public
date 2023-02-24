@@ -1,4 +1,4 @@
-package org.acme.beans3.qualify;
+package org.acme.cdi.beans3.qualify;
 
 
 import javax.inject.Qualifier;
