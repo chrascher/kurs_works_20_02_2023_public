@@ -33,5 +33,24 @@ public class DatatypesRepository {
         return i;
     }
 
+    public void deleteWithoutLoading(Datatypes toRemove) {
+        Query query = em.createQuery("delete from Foo where id = :id");
+
+        query.setParameter("id", toRemove.getId())
+             .executeUpdate();
+    }
+
+    @Transactional
+    public void deleteAllDatatypes(Datatypes toRemove) {
+        em.remove(toRemove);
+        return;
+    }
+
+    @Transactional
+    public void deleteNative() {
+        Query query = em.createNativeQuery("DELETE FROM Datatypes");
+        query.executeUpdate();
+    }
+
 
 }
