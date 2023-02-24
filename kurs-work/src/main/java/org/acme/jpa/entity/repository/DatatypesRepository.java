@@ -33,17 +33,17 @@ public class DatatypesRepository {
         return i;
     }
 
-    public void deleteWithoutLoading(Datatypes toRemove) {
+    public void deleteWithoutLoading(Long idToDelete) {
         Query query = em.createQuery("delete from Foo where id = :id");
-
-        query.setParameter("id", toRemove.getId())
+        query.setParameter("id", idToDelete)
              .executeUpdate();
     }
 
     @Transactional
-    public void deleteAllDatatypes(Datatypes toRemove) {
+    public void deleteElementDatatypes(Datatypes toRemove) {
+
         em.remove(toRemove);
-        return;
+
     }
 
     @Transactional
