@@ -25,6 +25,7 @@ public class DatatypesRepository {
         return query.getResultList();
     }
 
+    @Transactional(Transactional.TxType.REQUIRED)
     public int deleteAllDatatypes() {
         Query query = em.createQuery("DELETE FROM Datatypes");
         // returns the number of deleted entities

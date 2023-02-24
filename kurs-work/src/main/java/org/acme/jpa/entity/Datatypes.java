@@ -24,9 +24,60 @@ public class Datatypes {
     private Long id;
 
 
+    @Column(name = "a_long", nullable = true)
+    Long aLong;
+
+    @Column(name="a_string", length= 50, nullable = true)
+    private String aString;
+
+    @Enumerated(EnumType.STRING)
+    private ActiveEnum active = ActiveEnum.Active;
+
+//    @Embedded
+//    private ValidFromTo valid = new ValidFromTo();
+
+
+    // will not be persisted
     @Transient
     private Integer age;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public Long getaLong() {
+        return aLong;
+    }
+
+    public void setaLong(Long aLong) {
+        this.aLong = aLong;
+    }
+
+    public String getaString() {
+        return aString;
+    }
+
+    public void setaString(String aString) {
+        this.aString = aString;
+    }
+
+    public ActiveEnum getActive() {
+        return active;
+    }
+
+    public void setActive(ActiveEnum active) {
+        this.active = active;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }

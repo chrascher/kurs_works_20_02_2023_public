@@ -19,6 +19,8 @@ public class User extends PanacheEntity {
     public String username;
     @Password
     public String password;
+
+    // einfache variante für rollen ohne extra tabelle
     @Roles
     public String role;
 
