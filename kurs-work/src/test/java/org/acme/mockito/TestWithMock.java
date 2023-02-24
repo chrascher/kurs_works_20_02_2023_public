@@ -24,8 +24,17 @@ public class TestWithMock {
 
     private ChatMessageEntity chatMessage;
 
+    private ChatMessageEntity chatMessageInput;
+
     @BeforeEach
     void setUp() {
+
+        ChatMessageEntity entityInput = new ChatMessageEntity();
+        entityInput.setChatMessage("mocktest");
+        entityInput.setChatRoom("mocktest");
+        entityInput.setUserName( "mocktest");
+        chatMessageInput = entityInput;
+
         ChatMessageEntity entity = new ChatMessageEntity();
         entity.setId(1000L);
         entity.setChatMessage("mocktest");
@@ -33,15 +42,18 @@ public class TestWithMock {
         entity.setUserName( "mocktest");
         entity.setCreationTime(LocalDateTime.now());
         chatMessage = entity;
+
     }
     @Test
     public void firstTest() {
 
-        Mockito.when(mockecCMService.create(chatMessage)).thenReturn(chatMessage);
+        Mockito.when(mockecCMService.create(chatMessageInput)).thenReturn(chatMessage);
 
-        ChatMessageEntity created = mockecCMService.create(chatMessage);
+        ChatMessageEntity created = mockecCMService.create(chatMessageInput);
 
         Assertions.assertEquals("mocktest", created.getChatMessage());
+        Assertions.assertEquals(1000L, created.getId());
+        Assertions.assertNotNull(created.getCreationTime());
     }
 
 }
