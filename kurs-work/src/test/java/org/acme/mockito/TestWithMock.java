@@ -6,7 +6,6 @@ import org.acme.businessservice.ChatMessageServiceBl;
 import org.acme.entity.ChatMessageEntity;
 import org.acme.service.ChatMessageServiceDb;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -57,7 +56,7 @@ public class TestWithMock {
 
     }
     @Test
-    public void firstTest_MockDatabaseMethod() {
+    public void testMockitoDummyReturnwithToReturn() {
 
         Mockito.when(chatMsgDbMock.create(chatMessageInput)).thenReturn(chatMessage);
 
@@ -70,7 +69,7 @@ public class TestWithMock {
     }
 
     @Test
-    public void secondTest_Exception() {
+    public void testMockWithException() {
 
         Mockito.when(chatMsgDbMock.create(chatMessageInput)).thenThrow( new RuntimeException("my_exc"));
 
@@ -85,7 +84,7 @@ public class TestWithMock {
 
 
     @Test
-    public void secondTest_MockWithAnswer() {
+    public void testMockWithAnswer() {
 
         Mockito.when(chatMsgDbMock.create(chatMessageInput))
                 .thenAnswer( I -> returnDummyChatMessage());
