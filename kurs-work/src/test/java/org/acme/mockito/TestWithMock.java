@@ -77,11 +77,9 @@ public class TestWithMock {
             toTest.create(chatMessageInput);
             }, "Runtime exception was expected");
 
-
         assertEquals("my_exc", exception.getMessage());
 
     }
-
 
     @Test
     public void testMockWithAnswer() {
