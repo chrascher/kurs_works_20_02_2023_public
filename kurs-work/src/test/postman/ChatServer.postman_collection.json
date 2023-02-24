@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "2381ef16-a94d-409f-8567-4edbbaf08b34",
+		"name": "ChatServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/chatMessageResource/chatMessage/10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/chatMessageResource/chatMessage/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chatMessageResource",
+						"chatMessage",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/chatMessageResource/chatMessage/10 Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/chatMessageResource/chatMessage/{{testUserNumber}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chatMessageResource",
+						"chatMessage",
+						"{{testUserNumber}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/chatMessageResource/chatMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"userName\": \"{{$randomUserName}}\",\r\n  \"chatRoom\": \"{{$randomLastName}}\",\r\n  \"chatMessage\": \"{{$randomDomainWord}}\",\r\n  \"creationTime\": \"2022-03-10T12:15:50\",\r\n  \"isImportant\": true,\r\n  \"important\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/chatMessageResource/chatMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chatMessageResource",
+						"chatMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/chatMessageResource/chatMessage Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"postman.setEnvironmentVariable(\"myChatMessage\", \"e56067172e61\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"userName\": \"{{$randomUserName}}\",\r\n  \"chatRoom\": \"{{$randomLastName}}\",\r\n  \"chatMessage\": \"{{myChatMessage}}\",\r\n  \"creationTime\": \"2022-03-10T12:15:50\",\r\n  \"isImportant\": true,\r\n  \"important\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/chatMessageResource/chatMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chatMessageResource",
+						"chatMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/chatMessageResource/chatMessage",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 86,\r\n  \"userName\": \"updated\",\r\n  \"chatRoom\": \"updated\",\r\n  \"chatMessage\": \"updated\",\r\n  \"creationTime\": \"2022-03-10T12:15:50\",\r\n  \"isImportant\": true,\r\n  \"important\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/chatMessageResource/chatMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chatMessageResource",
+						"chatMessage"
+					]
+				},
+				"description": "PUT new chat message"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/chatMessageResource/chatMessage/10",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/chatMessageResource/chatMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chatMessageResource",
+						"chatMessage"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "chatMsg_Read",
+			"value": ""
+		}
+	]
+}

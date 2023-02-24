@@ -54,6 +54,11 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-openapi</artifactId>
     </dependency>
+    <!-- add quarkus security via jpa user entity -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-security-jpa</artifactId>
+    </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>
@@ -62,7 +67,13 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-orm</artifactId>
-    </dependency><!-- JDBC driver dependencies -->
+    </dependency>
+    <!-- panachache quarkus jpa extensions -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm-panache</artifactId>
+    </dependency>
+    <!-- JDBC driver dependencies -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-jdbc-postgresql</artifactId>
