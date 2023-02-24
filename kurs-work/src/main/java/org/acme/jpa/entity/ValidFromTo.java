@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 public class ValidFromTo {
 
     @Column(name="from", nullable = true)
-    private LocalDateTime from;
+    private LocalDateTime from = LocalDateTime.now();
 
     @Column(name="to", nullable = true)
-    private LocalDateTime to;
+    private LocalDateTime to = LocalDateTime.now();
 
     public LocalDateTime getFrom() {
         return from;
