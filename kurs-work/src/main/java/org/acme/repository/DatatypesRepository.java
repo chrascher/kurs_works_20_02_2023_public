@@ -1,4 +1,4 @@
-package org.acme.jpa.entity.repository;
+package org.acme.repository;
 
 
 import io.quarkus.runtime.StartupEvent;

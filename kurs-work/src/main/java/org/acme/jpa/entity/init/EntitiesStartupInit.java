@@ -3,8 +3,7 @@ package org.acme.jpa.entity.init;
 
 import io.quarkus.runtime.StartupEvent;
 import org.acme.jpa.entity.Datatypes;
-import org.acme.jpa.entity.repository.DatatypesRepository;
-import org.acme.resource.security.jpa.User;
+import org.acme.repository.DatatypesRepository;
 import org.jboss.logging.Logger;
 
 import javax.annotation.Priority;
